@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 
+use App\Http\Controllers\CalcController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -13,6 +14,11 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+
 Route::get('/', function () {
-    return view('welcome');
+    return view('calculator');
 });
+
+
+Route::get('/', [CalcController::class, 'index'])->name('calculator.home');
+Route::get('/process', [CalcController::class, 'calculate'])->name('calculator.process');
