@@ -6,10 +6,11 @@ use App\Models\Person;
 //use PHPUnit\Framework\TestCase;
 use Tests\TestCase;
 
-
+use Illuminate\Foundation\Testing\DatabaseTransactions;
 
 class ExampleTest extends TestCase
 {
+    use DatabaseTransactions;
     /**
      * A basic test example.
      */
@@ -21,7 +22,7 @@ class ExampleTest extends TestCase
     public function testBasicTest()
     {
         $data = [
-            'id'   => 102,
+
             'name' => 'DUMMY',
             'email'=> 'dummy@mail',
             'age'  => 0,
