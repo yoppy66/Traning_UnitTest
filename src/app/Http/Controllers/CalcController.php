@@ -23,7 +23,7 @@ class CalcController extends Controller
      * Function for calulator processing page /process
      *
      * @param Request $request
-     * @return void
+     * @return \Illuminate\Http\RedirectResponse
      */
     public function calculate(Request $request)
     {

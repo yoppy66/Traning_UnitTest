@@ -17,13 +17,13 @@ class CalcMultiply implements CalcI
     /**
      * Function to calculate
      *
-     * @param float $value1
-     * @param float $value2
+     * @param float $input1
+     * @param float $input2
      * @return float|integer
      */
-    public function calculate($value1, $value2)
+    public function calculate($input1, $input2)
     {
-        return $value1 * $value2;
+        return $input1 * $input2;
     }
 
     /**

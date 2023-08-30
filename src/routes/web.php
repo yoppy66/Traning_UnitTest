@@ -1,7 +1,6 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-
 use App\Http\Controllers\CalcController;
 /*
 |--------------------------------------------------------------------------
@@ -13,7 +12,6 @@ use App\Http\Controllers\CalcController;
 | be assigned to the "web" middleware group. Make something great!
 |
 */
-
 
 Route::get('/', function () {
     return view('calculator');
