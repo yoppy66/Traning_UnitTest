@@ -29,14 +29,22 @@ class CalcController extends Controller
     {
         $rules = [
             'val1' => 'required|numeric',
-            'val2' => 'required|numeric',
+            'val2' => [
+                'required',
+                'numeric',
+                function ($attribute, $value, $fail) use ($request) {
+                    if ($request->input('operator') === 'divide' && $value == 0) {
+                        $fail($request->input('val1') . ' / ' . $value . ' = Division by zero.');
+                    }
+                },
+            ],
             'operator' => [
                 'required',
                 'max:255',
                 function ($attribute, $value, $fail) {
                     $class_name = 'App\\Http\\Controllers\\Calc'.ucfirst($value);
                     if (!class_exists($class_name)) {
-                        $fail('That operatar is invalid.');
+                        $fail('That operator is invalid.');
                     }
                 },
             ],
@@ -46,7 +54,8 @@ class CalcController extends Controller
             'val1.numeric' => 'Value 1 must be a number',
             'val2.required' => 'Value 2 cannot be blank',
             'val2.numeric' => 'Value 2 must be a number',
-            'operator.required' => 'Please select an operator'
+            'operator.required' => 'Please select an operator',
+            'operator.max' => 'That operator is invalid.',
         ];
         $this->validate($request, $rules, $messages);
 
