@@ -13,9 +13,9 @@ use App\Http\Controllers\CalcController;
 |
 */
 
-Route::get('/', function () {
-    return view('calculator');
-});
+//Route::get('/', function () {
+//    return view('calculator');
+//});
 
 
 Route::get('/', [CalcController::class, 'index'])->name('calculator.home');

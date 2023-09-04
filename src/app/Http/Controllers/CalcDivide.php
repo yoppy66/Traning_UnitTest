@@ -19,10 +19,14 @@ class CalcDivide implements CalcI
      *
      * @param float $input1
      * @param float $input2
-     * @return float|integer
+     * @return float|integer|null
      */
     public function calculate($input1, $input2)
     {
+        if($input2 == 0){
+            return null;    // error
+        }
+
         return $input1 / $input2;
     }
 
