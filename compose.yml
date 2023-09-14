@@ -72,7 +72,6 @@ services:
       - MYSQL_PASSWORD=${DB_PASSWORD:-secret}
       - MYSQL_ROOT_PASSWORD=${DB_PASSWORD:-secret}
 
-
   db-testing:
     build:
       context: .
