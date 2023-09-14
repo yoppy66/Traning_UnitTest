@@ -16,6 +16,8 @@ class CalcController extends Controller
      */
     public function index()
     {
+//        phpinfo();
+//        exit();
         return view('calculator');
     }
 

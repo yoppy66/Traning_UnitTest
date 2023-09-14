@@ -1,3 +1,10 @@
+start:
+	@make npm-start
+	@make server-start
+npm-start:
+	cd src/ &&  npm run dev
+server-start:
+	docker compose exec app php artisan serve
 install:
 	@make build
 	@make up
