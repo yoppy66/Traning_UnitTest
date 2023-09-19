@@ -35,7 +35,7 @@ class TaskController extends Controller
             'task_name' => 'required|max:100',
         ];
 
-        $message = ['required' => '必須項目です', 'max' => '100文字以下にしてください。'];
+        $message = ['required' => '必須項目です', 'max' => '100文字以下にしてください'];
         Validator::make($request->all(), $rules, $message)->validate();
 
         $task = new  Task;
@@ -75,7 +75,7 @@ class TaskController extends Controller
                 'task_name' => 'required|max:100',
             ];
 
-            $messages = ['required' => '必須項目です', 'max' => '100文字以下にしてください。'];
+            $messages = ['required' => '必須項目です', 'max' => '100文字以下にしてください'];
 
             Validator::make($request->all(), $rules, $messages)->validate();
 

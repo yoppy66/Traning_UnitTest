@@ -1,17 +1,13 @@
 start:
 	@make npm-start
-	@make server-start
-	@make exec-seeder
 npm-start:
 	cd src/ &&  npm run dev
 server-start:
 	docker compose exec app php artisan serve
-exec-seeder:
-	docker compose exec app php artisan db:seed --database-testing
 install:
 	@make build
 	@make up
-	docker compose exec app composer install
+	docker compose exec app compo ser install
 	docker compose exec app cp .env.example .env
 	docker compose exec app php artisan key:generate
 	docker compose exec app php artisan storage:link
