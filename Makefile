@@ -7,7 +7,7 @@ server-start:
 install:
 	@make build
 	@make up
-	docker compose exec app compo ser install
+	docker compose exec app composer install
 	docker compose exec app cp .env.example .env
 	docker compose exec app php artisan key:generate
 	docker compose exec app php artisan storage:link
